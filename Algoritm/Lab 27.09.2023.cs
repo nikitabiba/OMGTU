@@ -3,19 +3,19 @@ public class Program
 {
     public static void Main()
     {
-        int n = Convert.ToInt32 (Console.ReadLine()), a, b, summ = 0, raz11 = 100000, raz21 = 100000, raz12 = 100000, raz22 = 100000;
+        int n = Convert.ToInt32(Console.ReadLine()), a, b, summ = 0, raz11 = 100000, raz21 = 100000, raz12 = 100000, raz22 = 100000;
         for (int i = 0; i < n; i++)
         {
-            a = Convert.ToInt32 (Console.ReadLine());
+            a = Convert.ToInt32(Console.ReadLine());
             b = Convert.ToInt32(Console.ReadLine());
             if (a > b) summ += a;
             else summ += b;
-            if (Math.Abs(a - b) % 3 == 1) if (Math.Abs(a - b) < raz11)
+            if (Math.Abs(a - b) % 3 == 1) if (Math.Abs(a - b) <= raz11)
                 {
                     raz12 = raz11;
                     raz11 = Math.Abs(a - b);
                 }
-            if (Math.Abs(a - b) % 3 == 2) if (Math.Abs(a - b) < raz21)
+            if (Math.Abs(a - b) % 3 == 2) if (Math.Abs(a - b) <= raz21)
                 {
                     raz22 = raz21;
                     raz21 = Math.Abs(a - b);
