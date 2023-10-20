@@ -31,6 +31,7 @@ public class Program
             if ((raz11 + raz12) < raz21) summ -= (raz11 + raz12);
             else summ -= raz21;
         }
-        Console.WriteLine(summ);
+        if (summ < 0) Console.WriteLine("Нет найденных значений(нет суммы, кратной трём).");
+        else Console.WriteLine(summ);
     }
 }
