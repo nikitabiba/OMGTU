@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace ConsoleApplication14
             string[] people1 = {"ТАМ", "ФЛУ", "ЙОУ", "ЯФХ"};
             Car car1 = new Car("BMW", 2000, year1, people1, "red");
 
-            int[] year2 = { 2023};
+            int[] year2 = {2023};
             string[] people2 = {"РВУ"};
             Car car2 = new Car("AUDI", 2023, year2, people2, "blue");
 
@@ -37,24 +37,23 @@ namespace ConsoleApplication14
             
             foreach(Car car in cars)
             {
-                if (car.name == name)
-                    car.Data();
+                car.name_kriteriy(name);
             }
+
             Console.WriteLine();
             Console.Write("Год выпуска: ");
             int year = int.Parse(Console.ReadLine());
             foreach (Car car in cars)
             {
-                if (car.year == year)
-                    car.Data();
+                car.year_kriteriy(year);
             }
             Console.WriteLine();
             Console.Write("Год осмотра: ");
             int osmotr = int.Parse(Console.ReadLine());
             for (int i = 0; i < 5; i++)
             {
-                if (cars[i].osmotr.Contains(osmotr)) Console.WriteLine("Car{0}: Осмотр пройден", i + 1);
-                else Console.WriteLine("Car{0}: Осмотр не пройден", i + 1);
+                Console.Write("Car {0}: ", i + 1);
+                cars[i].osmotr_kriteriy(osmotr);
             }
         }
     }
@@ -89,5 +88,26 @@ namespace ConsoleApplication14
             Console.WriteLine("Цвет: " + color);
             Console.WriteLine();
         }
+
+        public void name_kriteriy(string name)
+        {
+                if (this.name == name)
+                    Data();
+        }
+
+        public void year_kriteriy(int year)
+        {
+            if (this.year == year)
+                Data();
+        }
+
+        public void osmotr_kriteriy(int year)
+        {
+            if (osmotr.Contains(year))
+                Console.WriteLine("Прошёл осмотр");
+            else Console.WriteLine("Не прошёл осмотр");
+        }
+
+        
     }
 }
