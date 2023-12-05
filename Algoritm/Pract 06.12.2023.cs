@@ -15,6 +15,7 @@ namespace ConsoleApplication8
             for (int i = 0; i < mas.Length; i++) mas[i] = '?';
             int counterS = 0, counterB = 0, count = 0;
             int c = 1;
+            mas[0] = 's';
             while (counterS < (ks - kso) || counterB < (kb - kbo))
             {
                 for (int i = c; i < mas.Length; i++)
