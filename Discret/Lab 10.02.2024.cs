@@ -27,7 +27,7 @@ namespace ConsoleApplication26
             }
             dorogi = dorogi.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
             List<List<char>> masdotes = new List<List<char>>();
-            for (int i = 0; i < 3; i++) masdotes.Add(new List<char>());
+            for (int i = 0; i < 1000000; i++) masdotes.Add(new List<char>());
             List<char> dotes = new List<char>();
             foreach (string x in dorogi.Keys)
             {
