@@ -34,4 +34,3 @@ using (StreamReader sr = new StreamReader(path))
         foreach (var e in NamesAndTowns) sw.WriteLine(e);
     }
 }
-record class Elem(string[] Name, int Num, string Town);
