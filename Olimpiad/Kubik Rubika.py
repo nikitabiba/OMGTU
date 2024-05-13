@@ -1,0 +1,33 @@
+with open('input_s1_16.txt') as f:
+    lines = f.readlines()
+
+    line = lines[0]
+    n, m = map(int, line.split())
+
+    line = lines[1]
+    x, y, z = map(int, line.split())
+
+    for line in lines[2:m+2]:
+        step = line.split()
+        dim, pos, orientation = step[0], int(step[1]), int(step[2])
+
+        if dim == "X":
+            if x == pos:
+                if orientation == 1:
+                    z, y = n+1-y, z
+                else:
+                    y, z = n+1-z, y
+        elif dim == "Y":
+            if y == pos:
+                if orientation == 1:
+                    z, x = n+1-x, z
+                else:
+                    x, z = n+1-z, x
+        elif dim == "Z":
+            if z == pos:
+                if orientation > 0:
+                    y, x = n+1-x, y
+                else:
+                    x, y = n+1-y, x
+
+    print(f"{x} {y} {z}")
